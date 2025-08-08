@@ -51,13 +51,13 @@ public class HelloApplication {
 }
  */
  
- // Explanation:
- // - @SpringBootApplication → Tells Spring Boot: "This is the starting point."
- // - SpringApplication.run() → Launches an embedded server (Tomcat by default).
- // - No need to install Tomcat separately — it’s built-in.
+// Explanation:
+// - @SpringBootApplication → Tells Spring Boot: "This is the starting point."
+// - SpringApplication.run() → Launches an embedded server (Tomcat by default).
+// - No need to install Tomcat separately — it’s built-in.
 
 
- // Step 4: Create a REST Controller
+// Step 4: Create a REST Controller
 // HelloController.java
 /*
 package com.example.hello;
