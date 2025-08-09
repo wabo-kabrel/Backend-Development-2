@@ -97,3 +97,89 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByEmail(String email);
 }
  */
+
+
+//7. Using the Repository in a Service
+/*
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class UserService {
+    private final UserRepository repo;
+
+    public UserService(UserRepository repo) {
+        this.repo = repo;
+    }
+
+    public List<User> getAllUsers() {
+        return repo.findAll();
+    }
+
+    public User createUser(User user) {
+        return repo.save(user);
+    }
+}
+ */
+
+ //8. Using it in a Controller
+ /*
+ import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+    private final UserService service;
+
+    public UserController(UserService service) {
+        this.service = service;
+    }
+
+    @GetMapping
+    public List<User> getUsers() {
+        return service.getAllUsers();
+    }
+
+    @PostMapping
+    public User addUser(@RequestBody User user) {
+        return service.createUser(user);
+    }
+}
+  */
+
+  
+//9. Best Practices
+// ✅ Use @Service to keep business logic separate from controllers.
+// ✅ Keep @Entity classes clean (only fields, getters, setters).
+// ✅ Always validate data before saving.
+// ✅ For production, don’t use ddl-auto=update unless absolutely needed.
+// ✅ Use DTOs (Data Transfer Objects) to avoid exposing your entity structure directly in APIs.
+
+
+//10. Common Pitfalls
+// ⚠ Forgetting @Id in an entity → Spring Boot won’t know the primary key.
+// ⚠ Using ddl-auto=create in production → drops tables on restart.
+// ⚠ Not matching property names in queries → leads to runtime errors.
+// ⚠ Ignoring lazy loading → can cause LazyInitializationException.
+
+
+//11. Real-World Use Case
+// In an employee management system:
+    // - Employee table mapped to Employee entity.
+    // - EmployeeRepository handles CRUD.
+    // - EmployeeService manages hiring, updating, firing employees.
+    // - EmployeeController exposes REST API endpoints.
+
+
+
+//12. Practice Exercises
+//i. Create a new Book entity with fields: id, title, author, price.
+//ii. Create a BookRepository that extends JpaRepository.
+//iii. Create a BookService with:
+    // - getAllBooks()
+    // - addBook(Book book)
+//iv. Create a BookController with:
+    // - GET /books → returns all books
+    // - POST /books → adds a new book
+//v. Test with Postman or curl.
