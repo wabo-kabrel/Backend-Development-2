@@ -103,6 +103,19 @@ DataSourceAutoConfiguration did not match
 //   only works if the library is in your classpath.
 // - Putting components in the wrong package — @ComponentScan starts scanning from 
 //   your main app class’s package downward.
-// Overriding beans accidentally — Naming a bean the same as a default one without realizing it.
+// - Overriding beans accidentally — Naming a bean the same as a default one without realizing it.\
+
+//8. Practice Task:
+// - Create a project with only spring-boot-starter-web.
+// - Enable debug mode in application.properties:
+/*
+ debug=true
+ */
+// - Run the app and look at the auto-configuration report — identify at least 3 positive matches
+//   and 2 negative matches.
+// - Change the port using server.port and verify it overrides the default.
+// - Add spring-boot-starter-data-jpa and see what new configurations get applied.
+
+
 
 

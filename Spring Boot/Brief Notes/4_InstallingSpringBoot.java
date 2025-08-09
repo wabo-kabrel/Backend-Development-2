@@ -21,3 +21,17 @@ choco install springboot  # Windows via Chocolatey
 // Many IDEs let you create a Spring Boot project directly:
 // - IntelliJ → File → New → Spring Initializr Project.
 // - Eclipse with Spring Tools → File → New → Spring Starter Project.
+
+
+//4. Practice Task:
+// - Install Java 21 and Maven (if you haven’t already).
+// - Generate a Spring Boot project with:
+        // - Group: com.practice
+        // - Artifact: firstapp
+        // - Dependencies: Spring Web
+// - Open in your IDE and run the app.
+// - Change the default port in application.properties:
+        /*
+         server.port=8085
+         */
+// - Run again and check it’s available at: http://localhost:8085

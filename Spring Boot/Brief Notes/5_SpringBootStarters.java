@@ -96,3 +96,12 @@
     // - Write tests → spring-boot-starter-test
 // Just four dependencies, and 90% of the configuration is done for you.
 
+//8. Practice Task:
+// - Create a Spring Boot project with:
+        // - Spring Web
+        // - Spring Data JPA
+        // - Spring Boot Test
+// - Create a REST controller with endpoint /status returning {"status": "running"}.
+// - Add a dependency you don’t use (e.g., spring-boot-starter-mail), run the app, then
+//   remove it — see how the app size changes in logs.
+// - Open the pom.xml and inspect what dependencies spring-boot-starter-web brought in.
